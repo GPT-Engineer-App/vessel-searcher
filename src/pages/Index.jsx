@@ -100,13 +100,4 @@ const VesselCertificates = () => {
   );
 };
 
-const App = () => (
-  <Router>
-    <Routes>
-      <Route path="/" element={<VesselSearch />} />
-      <Route path="/vessels/:vesselId" element={<VesselCertificates />} />
-    </Routes>
-  </Router>
-);
-
-export default App;
+export { VesselSearch, VesselCertificates };
