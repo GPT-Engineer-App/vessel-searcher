@@ -12,9 +12,9 @@ const VesselSearch = () => {
   const handleSearch = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`/api/vessels?search=${query}`);
+      const response = await fetch(`/api/vessels?search=${encodeURIComponent(query)}`);
       const data = await response.json();
-      setVessels(data);
+      setVessels(data.vessels || []);
     } catch (error) {
       console.error("Error fetching vessels:", error);
     } finally {
